@@ -1,0 +1,121 @@
+unit DAOClass;
+
+interface
+
+uses
+   Vcl.Dialogs, Data.DB, Data.SqlExpr, System.SysUtils, VCL.Forms, Data.DBXCommon,
+   Datasnap.DBClient, Datasnap.Provider;
+
+type
+  TConnection = class(TSQLConnection)
+  strict private
+    class var FInstance : TConnection;
+  private
+    class procedure ReleaseInstance();
+  public
+    class function GetInstance(): TConnection;
+  end;
+
+type
+  TDataAcess = class
+  private
+    FConn: TSQLConnection;
+    FTransaction: TDBXTransaction;
+  public
+    property Conn: TSQLConnection read FConn write FConn;
+    property Transaction: TDBXTransaction read FTransaction write FTransaction;
+
+    constructor Create;
+    procedure ExecCommand(const sSQL: string);
+    function ExecDataset(const sSQL: string): OleVariant;
+
+  end;
+
+implementation
+
+{ TConnection }
+
+class function TConnection.GetInstance: TConnection;
+begin
+  if not Assigned(Self.FInstance) then
+  begin
+    Self.FInstance := TConnection.Create(Application);
+
+    Self.FInstance.ConnectionName := 'MySQLConnection';
+    Self.FInstance.LoginPrompt := false;
+    Self.FInstance.Params.Clear;
+    Self.FInstance.LoadParamsOnConnect := True;
+    Self.FInstance.LoadParamsFromIniFile(
+          IncludeTrailingPathDelimiter(ExtractFilePath(Application.ExeName)) +
+                                       'CONN.INI');
+    Self.FInstance.Connected := True;
+  end;
+
+  Result := Self.FInstance;
+end;
+
+class procedure TConnection.ReleaseInstance;
+begin
+  if Assigned(Self.FInstance) then
+  begin
+    Self.FInstance.Connected := False;
+    Self.FInstance.Free;
+  end;
+end;
+
+
+
+{ TDataAcess }
+
+constructor TDataAcess.Create;
+begin
+   FConn := TConnection.GetInstance;
+end;
+
+procedure TDataAcess.ExecCommand(const sSQL: string);
+var
+  sqlQuery: TSQLQuery;
+begin
+  sqlQuery := TSQLQuery.Create(nil);
+  sqlQuery.SQL.Add(sSQL);
+
+  try
+    try
+    sqlQuery.ExecSQL();
+    except
+      on E: Exception do
+        //tratamento personalizado de erro, caso necessário
+        raise Exception.Create(E.Message);
+    end;
+  finally
+    sqlQuery.Free;
+  end;
+end;
+
+function TDataAcess.ExecDataset(const sSQL: string): OleVariant;
+var
+  sqlDs: TSQLDataSet;
+  dtsProv: TDataSetProvider;
+  cdsRetorno: TClientDataSet;
+begin
+  sqlDs := TSQLDataSet.Create(nil);
+  sqlDs.SQLConnection := Conn;
+  sqlDs.CommandText := sSQL;
+
+  dtsProv := TDataSetProvider.Create(nil);
+  dtsProv.Name := 'dtsProv';
+  dtsProv.DataSet := sqlDs;
+
+  cdsRetorno := TClientDataSet.Create(nil);
+  cdsRetorno.SetProvider(dtsProv);
+
+  try
+    cdsRetorno.Open;
+    Result := cdsRetorno.Data;
+  finally
+    //cdsRetorno.Free;
+  end;
+
+end;
+
+end.

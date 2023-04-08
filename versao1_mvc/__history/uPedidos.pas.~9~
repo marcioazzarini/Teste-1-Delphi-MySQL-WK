@@ -1,0 +1,40 @@
+unit uPedidos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.SqlExpr, Data.DBXMySQL,
+  Datasnap.DBClient, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Datasnap.Provider;
+
+type
+  TfrmPedidos = class(TForm)
+    DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
+    Button1: TButton;
+    DataSetProvider1: TDataSetProvider;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPedidos: TfrmPedidos;
+
+implementation
+
+{$R *.dfm}
+
+uses ClienteClass;
+
+procedure TfrmPedidos.Button1Click(Sender: TObject);
+var
+  objCli: TCliente;
+begin
+  objCli := TCliente.Create;
+  DataSource1.DataSet := objCli.getClientes();
+end;
+
+end.

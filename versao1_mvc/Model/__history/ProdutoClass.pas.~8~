@@ -1,0 +1,37 @@
+unit ProdutoClass;
+
+interface
+
+type
+  TProduto = class
+  private
+    ProdutoId: integer;
+    Descricao: string;
+    PrecoVenda: float;
+    FUF: string;
+  public
+    property ProdutoId: integer read FClienteId write FClienteId;
+    property Descricao: string read FNome write FNome;
+    property PrecoVenda: real read FCidade write FCidade;
+    property UF: string read FUF write FUF;
+
+    constructor Create;
+    procedure Salvar(const objProduto: TProduto);
+
+  end;
+
+implementation
+
+{ TProduto }
+
+constructor TProduto.Create;
+begin
+
+end;
+
+procedure TProduto.Salvar(const objProduto: TProduto);
+begin
+
+end;
+
+end.
