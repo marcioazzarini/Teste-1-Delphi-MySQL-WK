@@ -1,7 +1,7 @@
 object frmPedidoVenda: TfrmPedidoVenda
   Left = 0
   Top = 0
-  Caption = 'Pedido de Venda'
+  Caption = 'Pedido de Venda - Marcio Azzarini'
   ClientHeight = 494
   ClientWidth = 757
   Color = clBtnFace
@@ -424,8 +424,6 @@ object frmPedidoVenda: TfrmPedidoVenda
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 438
-    ExplicitWidth = 714
     object btnGravarPedido: TSpeedButton
       Left = 20
       Top = 17
