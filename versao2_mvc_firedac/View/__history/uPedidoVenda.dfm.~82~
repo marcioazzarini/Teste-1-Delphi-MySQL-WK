@@ -1,7 +1,7 @@
 object frmPedidoVenda: TfrmPedidoVenda
   Left = 0
   Top = 0
-  Caption = 'Pedido de Venda'
+  Caption = 'Pedido de Venda - Marcio Azzarini v2 - Firedac'
   ClientHeight = 494
   ClientWidth = 757
   Color = clBtnFace
@@ -23,7 +23,6 @@ object frmPedidoVenda: TfrmPedidoVenda
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitTop = -6
     object Label6: TLabel
       Left = 27
       Top = 7
@@ -380,6 +379,7 @@ object frmPedidoVenda: TfrmPedidoVenda
         Width = 59
         Height = 21
         TabOrder = 0
+        OnExit = edtCodProdutoExit
         OnKeyPress = edtCodProdutoKeyPress
       end
       object edtQtde: TEdit
@@ -423,8 +423,6 @@ object frmPedidoVenda: TfrmPedidoVenda
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 438
-    ExplicitWidth = 714
     object btnGravarPedido: TSpeedButton
       Left = 20
       Top = 17

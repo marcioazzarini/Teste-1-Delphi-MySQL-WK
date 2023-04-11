@@ -46,7 +46,6 @@ type
     DBText1: TDBText;
     Label6: TLabel;
     edtNumPedido: TEdit;
-    SQLConnection1: TSQLConnection;
     btnNovoPedido: TSpeedButton;
     btnBuscaPedido: TSpeedButton;
     procedure edtCodProdutoKeyPress(Sender: TObject; var Key: Char);

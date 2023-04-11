@@ -2,7 +2,7 @@ object frmPedidoVenda: TfrmPedidoVenda
   Left = 0
   Top = 0
   Caption = 'Pedido de Venda - Marcio Azzarini v2 - Firedac'
-  ClientHeight = 494
+  ClientHeight = 506
   ClientWidth = 757
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -417,12 +417,13 @@ object frmPedidoVenda: TfrmPedidoVenda
   end
   object Panel2: TPanel
     Left = 0
-    Top = 432
+    Top = 444
     Width = 757
     Height = 62
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 1
+    ExplicitTop = 432
     object btnGravarPedido: TSpeedButton
       Left = 20
       Top = 17
@@ -591,7 +592,7 @@ object frmPedidoVenda: TfrmPedidoVenda
     Left = 0
     Top = 129
     Width = 757
-    Height = 303
+    Height = 315
     Align = alClient
     DataSource = dtsProdutos
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -689,61 +690,5 @@ object frmPedidoVenda: TfrmPedidoVenda
     DataSet = cdsProdutos
     Left = 192
     Top = 144
-  end
-  object SQLConnection1: TSQLConnection
-    ConnectionName = 'MySQLConnection'
-    DriverName = 'MySQL'
-    Params.Strings = (
-      'DriverUnit=Data.DBXMySQL'
-      
-        'DriverPackageLoader=TDBXDynalinkDriverLoader,DbxCommonDriver270.' +
-        'bpl'
-      
-        'DriverAssemblyLoader=Borland.Data.TDBXDynalinkDriverLoader,Borla' +
-        'nd.Data.DbxCommonDriver,Version=24.0.0.0,Culture=neutral,PublicK' +
-        'eyToken=91d62ebb5b0d1b1b'
-      
-        'MetaDataPackageLoader=TDBXMySqlMetaDataCommandFactory,DbxMySQLDr' +
-        'iver270.bpl'
-      
-        'MetaDataAssemblyLoader=Borland.Data.TDBXMySqlMetaDataCommandFact' +
-        'ory,Borland.Data.DbxMySQLDriver,Version=24.0.0.0,Culture=neutral' +
-        ',PublicKeyToken=91d62ebb5b0d1b1b'
-      'GetDriverFunc=getSQLDriverMYSQL'
-      'LibraryName=dbxmys.dll'
-      'LibraryNameOsx=libsqlmys.dylib'
-      'VendorLib=LIBMYSQL.dll'
-      'VendorLibWin64=libmysql.dll'
-      'VendorLibOsx=libmysqlclient.dylib'
-      'MaxBlobSize=-1'
-      'DriverName=MySQL'
-      'HostName=localhost'
-      'User_Name=root'
-      'Password=root'
-      'ServerCharSet='
-      'BlobSize=-1'
-      'ErrorResourceFile='
-      'LocaleCode=0000'
-      'Compressed=False'
-      'Encrypted=False'
-      'ConnectTimeout=60'
-      'Database=mydb'
-      
-        'ConnectionString=DriverUnit=Data.DBXMySQL,DriverPackageLoader=TD' +
-        'BXDynalinkDriverLoader,DbxCommonDriver270.bpl,DriverAssemblyLoad' +
-        'er=Borland.Data.TDBXDynalinkDriverLoader,Borland.Data.DbxCommonD' +
-        'river,Version=24.0.0.0,Culture=neutral,PublicKeyToken=91d62ebb5b' +
-        '0d1b1b,MetaDataPackageLoader=TDBXMySqlMetaDataCommandFactory,Dbx' +
-        'MySQLDriver270.bpl,MetaDataAssemblyLoader=Borland.Data.TDBXMySql' +
-        'MetaDataCommandFactory,Borland.Data.DbxMySQLDriver,Version=24.0.' +
-        '0.0,Culture=neutral,PublicKeyToken=91d62ebb5b0d1b1b,GetDriverFun' +
-        'c=getSQLDriverMYSQL,LibraryName=dbxmys.dll,LibraryNameOsx=libsql' +
-        'mys.dylib,VendorLib=LIBMYSQL.dll,VendorLibWin64=libmysql.dll,Ven' +
-        'dorLibOsx=libmysqlclient.dylib,MaxBlobSize=-1,DriverName=MySQL,H' +
-        'ostName=localhost,User_Name=root,Password=root,ServerCharSet=,Bl' +
-        'obSize=-1,ErrorResourceFile=,LocaleCode=0000,Compressed=False,En' +
-        'crypted=False,ConnectTimeout=60,Database=mydb')
-    Left = 736
-    Top = 506
   end
 end
