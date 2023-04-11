@@ -1,0 +1,29 @@
+unit uProdutoController;
+
+interface
+
+uses
+  uProdutoClass;
+
+type
+  TProdutoController = class
+  public
+    function getProduto(iCLienteId: integer): TProduto;
+    function getProdutos: OleVariant;
+  end;
+
+implementation
+
+{ TProdutoController }
+
+function TProdutoController.getProduto(iCLienteId: integer): TProduto;
+begin
+
+end;
+
+function TProdutoController.getProdutos: OleVariant;
+begin
+
+end;
+
+end.

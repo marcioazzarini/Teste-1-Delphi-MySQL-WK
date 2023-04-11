@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/04/06 17:40:21.000.953,=C:\Users\marci\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:40:56.000.878,C:\testes_wk\teste1\versao1_mvc\uPrincipal.dfm=C:\Users\marci\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2023/04/06 17:40:56.000.878,C:\testes_wk\teste1\versao1_mvc\uPrincipal.pas=C:\Users\marci\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:41:12.000.505,C:\testes_wk\teste1\versao1_mvc\Teste1_MVC.dproj=C:\Users\marci\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/04/06 17:42:23.000.406,=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:42:40.000.006,C:\testes_wk\teste1\versao1_mvc\Model\ClienteClass.pas=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:42:49.000.005,=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:42:54.000.257,C:\testes_wk\teste1\versao1_mvc\ProdutoClass.pas=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:43:18.000.416,C:\testes_wk\teste1\versao1_mvc\ProdutoClass.pas=</Transaction>
+    <Transaction>2023/04/06 17:43:24.000.761,=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:43:38.000.522,C:\testes_wk\teste1\versao1_mvc\Model\ProdutoClass.pas=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:43:57.000.792,=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:44:05.000.662,C:\testes_wk\teste1\versao1_mvc\PedidoClass.pas=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:44:34.000.631,C:\testes_wk\teste1\versao1_mvc\PedidoClass.pas=</Transaction>
+    <Transaction>2023/04/06 17:44:50.000.242,=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:45:23.000.827,C:\testes_wk\teste1\versao1_mvc\PedidoClass.pas=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:48:42.000.752,C:\testes_wk\teste1\versao1_mvc\PedidoClass.pas=</Transaction>
+    <Transaction>2023/04/06 17:48:59.000.492,=C:\testes_wk\teste1\versao1_mvc\Model\PedidoClass.pas</Transaction>
+    <Transaction>2023/04/06 17:54:34.000.899,=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:54:53.000.606,C:\testes_wk\teste1\versao1_mvc\Model\DAOClass.pas=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 17:56:31.000.704,=C:\testes_wk\teste1\versao1_mvc\Unit2.pas</Transaction>
+    <Transaction>2023/04/06 18:12:54.000.380,C:\testes_wk\teste1\versao1_mvc\frmPedidos.pas=C:\testes_wk\teste1\versao1_mvc\Unit2.pas</Transaction>
+    <Transaction>2023/04/06 18:12:54.000.380,C:\testes_wk\teste1\versao1_mvc\frmPedidos.dfm=C:\testes_wk\teste1\versao1_mvc\Unit2.dfm</Transaction>
+    <Transaction>2023/04/06 21:09:48.000.056,C:\testes_wk\teste1\versao1_mvc\frmPedidos.pas=C:\testes_wk\teste1\versao1_mvc\uPedidos.pas</Transaction>
+    <Transaction>2023/04/06 21:09:48.000.056,C:\testes_wk\teste1\versao1_mvc\frmPedidos.dfm=C:\testes_wk\teste1\versao1_mvc\uPedidos.dfm</Transaction>
+    <Transaction>2023/04/06 21:55:57.000.796,C:\testes_wk\teste1\versao1_mvc\Model\ClienteClass.pas=C:\testes_wk\teste1\versao1_mvc\Model\uClienteClass.pas</Transaction>
+    <Transaction>2023/04/06 21:56:01.000.482,C:\testes_wk\teste1\versao1_mvc\Model\DAOClass.pas=C:\testes_wk\teste1\versao1_mvc\Model\uDAOClass.pas</Transaction>
+    <Transaction>2023/04/06 21:56:04.000.998,C:\testes_wk\teste1\versao1_mvc\Model\PedidoClass.pas=C:\testes_wk\teste1\versao1_mvc\Model\uPedidoClass.pas</Transaction>
+    <Transaction>2023/04/06 21:56:09.000.659,C:\testes_wk\teste1\versao1_mvc\Model\ProdutoClass.pas=C:\testes_wk\teste1\versao1_mvc\Model\uProdutoClass.pas</Transaction>
+    <Transaction>2023/04/06 21:56:35.000.002,=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 21:56:58.000.581,C:\testes_wk\teste1\versao1_mvc\Unit1.pas=C:\testes_wk\teste1\versao1_mvc\Controller\uClienteController.pas</Transaction>
+    <Transaction>2023/04/06 22:07:47.000.101,=C:\testes_wk\teste1\versao1_mvc\View\uPedidoVenda.pas</Transaction>
+    <Transaction>2023/04/06 22:27:03.000.207,=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 22:27:16.000.999,C:\testes_wk\teste1\versao1_mvc\Unit1.pas=C:\testes_wk\teste1\versao1_mvc\Controller\uProdutoController.pas</Transaction>
+    <Transaction>2023/04/07 10:13:25.000.571,=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/07 10:13:40.000.716,C:\testes_wk\teste1\versao1_mvc\Controller\uPedidoController.pas=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/07 11:58:00.000.224,=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/07 11:58:12.000.519,C:\testes_wk\teste1\versao1_mvc\Model\uDetalhePedidoClass.pas=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
+    <Transaction>2023/04/07 19:59:05.000.016,C:\testes_wk\teste1\versao1_mvc\uPrincipal.pas=</Transaction>
+    <Transaction>2023/04/07 19:59:13.000.083,C:\testes_wk\teste1\versao1_mvc\uPedidos.pas=</Transaction>
+    <Transaction>2023/04/07 21:22:47.000.060,=C:\testes_wk\teste1\versao1_mvc\View\uSearch.pas</Transaction>
+    <Transaction>2023/04/11 08:17:25.790,C:\testes_wk\teste1\Teste-1-Delphi-MySQL-WK\versao2_mvc_firedac\Teste1_MVC_Firedac.dproj=C:\testes_wk\teste1\Teste-1-Delphi-MySQL-WK\versao2_mvc_firedac\Teste1_MVC.dproj</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Controller"/>
+    <File Path="Controller\uClienteController.pas"/>
+    <File Path="Controller\uPedidoController.pas"/>
+    <File Path="Controller\uProdutoController.pas"/>
+    <File Path="Model"/>
+    <File Path="Model\uClienteClass.pas"/>
+    <File Path="Model\uDAOClass.pas"/>
+    <File Path="Model\uDetalhePedidoClass.pas"/>
+    <File Path="Model\uPedidoClass.pas"/>
+    <File Path="Model\uProdutoClass.pas"/>
+    <File Path="View"/>
+    <File Path="View\uPedidoVenda.pas"/>
+    <File Path="View\uPedidoVenda.dfm"/>
+    <File Path="View\uSearch.pas"/>
+    <File Path="View\uSearch.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

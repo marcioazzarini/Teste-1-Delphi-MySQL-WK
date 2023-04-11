@@ -39,9 +39,9 @@
     <Transaction>2023/04/07 10:13:40.000.716,C:\testes_wk\teste1\versao1_mvc\Unit1.pas=C:\testes_wk\teste1\versao1_mvc\Controller\uPedidoController.pas</Transaction>
     <Transaction>2023/04/07 11:58:00.000.224,=C:\testes_wk\teste1\versao1_mvc\Unit1.pas</Transaction>
     <Transaction>2023/04/07 11:58:12.000.519,C:\testes_wk\teste1\versao1_mvc\Unit1.pas=C:\testes_wk\teste1\versao1_mvc\Model\uDetalhePedidoClass.pas</Transaction>
-    <Transaction>2023/04/07 19:59:05.016,C:\testes_wk\teste1\versao1_mvc\uPrincipal.pas=</Transaction>
-    <Transaction>2023/04/07 19:59:13.083,C:\testes_wk\teste1\versao1_mvc\uPedidos.pas=</Transaction>
-    <Transaction>2023/04/07 21:22:47.060,=C:\testes_wk\teste1\versao1_mvc\View\uSearch.pas</Transaction>
+    <Transaction>2023/04/07 19:59:05.000.016,C:\testes_wk\teste1\versao1_mvc\uPrincipal.pas=</Transaction>
+    <Transaction>2023/04/07 19:59:13.000.083,C:\testes_wk\teste1\versao1_mvc\uPedidos.pas=</Transaction>
+    <Transaction>2023/04/07 21:22:47.000.060,=C:\testes_wk\teste1\versao1_mvc\View\uSearch.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Controller"/>
@@ -56,6 +56,7 @@
     <File Path="Model\uDetalhePedidoClass.pas"/>
     <File Path="View"/>
     <File Path="View\uPedidoVenda.pas"/>
+    <File Path="View\uPedidoVenda.dfm"/>
     <File Path="View\uSearch.pas"/>
     <File Path="View\uSearch.dfm"/>
   </ProjectSortOrder>

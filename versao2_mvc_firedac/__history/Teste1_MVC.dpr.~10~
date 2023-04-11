@@ -1,0 +1,23 @@
+program Teste1_MVC;
+
+uses
+  Vcl.Forms,
+  uPrincipal in 'uPrincipal.pas' {Form1},
+  uClienteClass in 'Model\uClienteClass.pas',
+  uProdutoClass in 'Model\uProdutoClass.pas',
+  uPedidoClass in 'Model\uPedidoClass.pas',
+  uDAOClass in 'Model\uDAOClass.pas',
+  uPedidos in 'uPedidos.pas' {frmPedidos},
+  uClienteController in 'Controller\uClienteController.pas',
+  uPedidoVenda in 'View\uPedidoVenda.pas' {frmPedidoVenda};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmPedidos, frmPedidos);
+  Application.CreateForm(TfrmPedidoVenda, frmPedidoVenda);
+  Application.Run;
+end.

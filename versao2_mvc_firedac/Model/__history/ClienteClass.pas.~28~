@@ -1,0 +1,57 @@
+unit ClienteClass;
+
+interface
+
+uses
+  Datasnap.DBClient;
+
+type
+  TCliente = class
+  private
+    FClienteId: integer;
+    FNome: string;
+    FCidade: string;
+    FUF: string;
+  public
+    property ClienteId: integer read FClienteId write FClienteId;
+    property Nome: string read FNome write FNome;
+    property Cidade: string read FCidade write FCidade;
+    property UF: string read FUF write FUF;
+
+    constructor Create;
+    procedure Salvar(const objCliente: TCliente);
+    function getClientes: OleVAriant;
+
+  end;
+
+implementation
+
+uses
+  DAOClass;
+
+{ TCliente }
+
+constructor TCliente.Create;
+begin
+
+end;
+
+function TCliente.getClientes: OleVariant;
+var
+  objDA: TDataAcess;
+begin
+  objDA := TDataAcess.Create;
+  try
+    Result := objDA.ExecDataset('SELECT * FROM Cliente');
+  finally
+    objDA.Free;
+  end;
+
+end;
+
+procedure TCliente.Salvar(const objCliente: TCliente);
+begin
+
+end;
+
+end.

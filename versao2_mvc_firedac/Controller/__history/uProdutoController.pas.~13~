@@ -1,0 +1,17 @@
+unit uProdutoController;
+
+interface
+
+uses
+  uProdutoClass;
+
+type
+  TProdutoController = class
+  public
+    function getProduto(iCLienteId: integer): TProduto;
+    function getClientes: OleVariant;
+  end;
+
+implementation
+
+end.
