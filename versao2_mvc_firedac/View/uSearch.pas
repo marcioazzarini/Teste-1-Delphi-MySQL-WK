@@ -11,17 +11,18 @@ uses
 type
   TfrmSearch = class(TForm)
     Panel2: TPanel;
-    btnConsultar: TSpeedButton;
+    btnSelecionar: TSpeedButton;
     grdDados: TDBGrid;
     StatusBar1: TStatusBar;
     dtsBusca: TDataSource;
     cdsBusca: TClientDataSet;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure grdDadosDblClick(Sender: TObject);
     procedure grdDadosKeyPress(Sender: TObject; var Key: Char);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
-    procedure FormShow(Sender: TObject);
+    procedure grdDadosDblClick(Sender: TObject);
+    procedure btnSelecionarClick(Sender: TObject);
   private
+    procedure SelecionarItem;
     { Private declarations }
   public
     { Public declarations }
@@ -55,6 +56,12 @@ begin
 end;
 
 
+procedure TfrmSearch.btnSelecionarClick(Sender: TObject);
+begin
+  if (cdsBusca.RecordCount > 0) then
+    SelecionarItem;
+end;
+
 procedure TfrmSearch.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
@@ -67,13 +74,7 @@ begin
     Close;
 end;
 
-procedure TfrmSearch.FormShow(Sender: TObject);
-begin
-  if True then
-
-end;
-
-procedure TfrmSearch.grdDadosDblClick(Sender: TObject);
+procedure TfrmSearch.SelecionarItem;
 var
   i: integer;
 begin
@@ -91,6 +92,12 @@ begin
   end;
 
   Close;
+end;
+
+procedure TfrmSearch.grdDadosDblClick(Sender: TObject);
+begin
+  if (cdsBusca.RecordCount > 0) then
+    SelecionarItem;
 end;
 
 procedure TfrmSearch.grdDadosKeyPress(Sender: TObject; var Key: Char);

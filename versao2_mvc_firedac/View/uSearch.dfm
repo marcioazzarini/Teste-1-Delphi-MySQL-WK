@@ -15,7 +15,6 @@ object frmSearch: TfrmSearch
   Position = poScreenCenter
   OnClose = FormClose
   OnKeyPress = FormKeyPress
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Panel2: TPanel
@@ -26,7 +25,7 @@ object frmSearch: TfrmSearch
     Align = alBottom
     ParentBackground = False
     TabOrder = 0
-    object btnConsultar: TSpeedButton
+    object btnSelecionar: TSpeedButton
       Left = 8
       Top = 6
       Width = 98
@@ -86,6 +85,7 @@ object frmSearch: TfrmSearch
         1515151515151515151515151515020A15151515151515151515151515151515
         1515151515151515151515151515151515151515151515151515151515151515
         1515151515151515151515151515151515151515151515151515}
+      OnClick = btnSelecionarClick
     end
   end
   object grdDados: TDBGrid

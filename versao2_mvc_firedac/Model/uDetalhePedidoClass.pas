@@ -30,6 +30,8 @@ type
     function getDetalhesPedidos(iNumPedido: integer): OleVariant;
 
     procedure Inserir;
+    procedure Excluir;
+    procedure ExcluirPorPedido(iNumPedido: Integer);
   end;
 
 
@@ -46,6 +48,39 @@ end;
 
 constructor TDetalhePedido.Create(iProdutoId: integer);
 begin
+
+end;
+
+procedure TDetalhePedido.Excluir;
+var
+  objDA: TDataAcess;
+  sSQL: string;
+begin
+  objDA := TDataAcess.Create;
+
+  sSQL := 'DELETE FROM DetalhePedido WHERE DetalhePedidoId = ' + IntToStr(FDetalhePedidoId);
+
+  try
+    objDA.ExecCommand(sSQL);
+  finally
+    objDA.Free;
+  end;
+end;
+
+procedure TDetalhePedido.ExcluirPorPedido(iNumPedido: Integer);
+var
+  objDA: TDataAcess;
+  sSQL: string;
+begin
+  objDA := TDataAcess.Create;
+
+  sSQL := 'DELETE FROM DetalhePedido WHERE NumPedido = ' + IntToStr(iNumPedido);
+
+  try
+    objDA.ExecCommand(sSQL);
+  finally
+    objDA.Free;
+  end;
 
 end;
 

@@ -26,6 +26,7 @@ type
 
     procedure Inserir;
     procedure Atualizar;
+    procedure Excluir;
     function GetNextNumPedido: integer;
     procedure LimpaDetalhes;
     function getPedidos: OleVariant;
@@ -69,6 +70,23 @@ begin
     objDA.Free;
     cdsDados.Free;
   end;
+end;
+
+procedure TPedido.Excluir;
+var
+  objDA: TDataAcess;
+  sSQL: string;
+begin
+  objDA := TDataAcess.Create;
+
+  sSQL := 'DELETE FROM Pedido WHERE NumPedido = ' + IntToStr(FNumPedido);
+
+  try
+    objDA.ExecCommand(sSQL);
+  finally
+    objDA.Free;
+  end;
+
 end;
 
 function TPedido.GetNextNumPedido: integer;

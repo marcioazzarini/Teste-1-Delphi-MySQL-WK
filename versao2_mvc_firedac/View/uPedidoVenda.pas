@@ -48,6 +48,7 @@ type
     edtNumPedido: TEdit;
     btnNovoPedido: TSpeedButton;
     btnBuscaPedido: TSpeedButton;
+    btnExcluir: TSpeedButton;
     procedure edtCodProdutoKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddProdutoClick(Sender: TObject);
     procedure dbgrdProdutosKeyPress(Sender: TObject; var Key: Char);
@@ -65,6 +66,8 @@ type
     procedure btnBuscaPedidoClick(Sender: TObject);
     procedure edtCodClienteExit(Sender: TObject);
     procedure edtCodProdutoExit(Sender: TObject);
+    procedure cdsProdutosAfterDelete(DataSet: TDataSet);
+    procedure btnExcluirClick(Sender: TObject);
   private
     procedure ValidarCampo(Campo: TEdit; sDescricao: string);
     procedure clearData;
@@ -180,6 +183,27 @@ begin
   frmSearch.openBusca(Self, edtCodProduto.Name, cBuscaProduto);
 end;
 
+procedure TfrmPedidoVenda.btnExcluirClick(Sender: TObject);
+var
+  objPedido: TPedido;
+  objPedidoControl: TPedidoController;
+begin
+  if (Trim(edtNumPedido.Text) = '') or (StrToInt(edtNumPedido.Text) < 0) then
+  begin
+    MessageDlg('Nenhum Pedido selecionado!', mtWarning, [mbOK], 0);
+    Exit;
+  end;
+
+  if MessageDlg('Deseja realmente excluir o Pedido selecionado?', mtConfirmation, [MbYes, mbNo], 0) = mrNo then
+    Exit;
+
+  objPedido := TPedido.Create(StrToInt(edtNumPedido.Text));
+
+  objPedidoControl.Excluir(objPedido);
+  ClearData;
+  ShowMessage('Pedido Excluído!');
+end;
+
 procedure TfrmPedidoVenda.btnGravarPedidoClick(Sender: TObject);
 var
   objCli: TCliente;
@@ -244,6 +268,11 @@ begin
   end;
 
   clearData;
+end;
+
+procedure TfrmPedidoVenda.cdsProdutosAfterDelete(DataSet: TDataSet);
+begin
+  //
 end;
 
 procedure TfrmPedidoVenda.cdsProdutosBeforeDelete(DataSet: TDataSet);
