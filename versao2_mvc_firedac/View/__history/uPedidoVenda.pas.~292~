@@ -49,6 +49,7 @@ type
     btnNovoPedido: TSpeedButton;
     btnBuscaPedido: TSpeedButton;
     btnExcluir: TSpeedButton;
+    btnCancelar: TSpeedButton;
     procedure edtCodProdutoKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddProdutoClick(Sender: TObject);
     procedure dbgrdProdutosKeyPress(Sender: TObject; var Key: Char);
@@ -68,9 +69,11 @@ type
     procedure edtCodProdutoExit(Sender: TObject);
     procedure cdsProdutosAfterDelete(DataSet: TDataSet);
     procedure btnExcluirClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
     procedure ValidarCampo(Campo: TEdit; sDescricao: string);
     procedure clearData;
+    procedure getPedido;
     { Private declarations }
   public
     { Public declarations }
@@ -134,12 +137,40 @@ begin
   frmSearch.openBusca(Self, edtCodCliente.Name, cBuscaCliente);
 end;
 
-procedure TfrmPedidoVenda.btnBuscaPedidoClick(Sender: TObject);
+procedure TfrmPedidoVenda.getPedido;
 var
   cdsTemp: TClientDataSet;
   objDetPedido: TDetalhePedido;
   objPedido: TPedido;
   Key: Char;
+begin
+  cdsProdutos.EmptyDataSet;
+
+  objPedido := TPedido.Create(StrToInt(edtNumPedido.Text));
+  edtCodCliente.Text := IntToStr(objPedido.ClienteId);
+  edtNomeCliente.Text := objPedido.Nome;
+
+  objDetPedido := TDetalhePedido.Create;
+
+  cdsTemp := TClientDataSet.Create(nil);
+  cdsTemp.Data := objDetPedido.getDetalhesPedidos(objPedido.NumPedido);
+  cdsTemp.Open;
+
+  while not cdsTemp.EOF do
+  begin
+    cdsProdutos.Append;
+    cdsProdutosProdutoId.AsInteger := cdsTemp.FieldByName('ProdutoId').AsInteger;
+    cdsProdutosQuantidade.AsInteger := cdsTemp.FieldByName('Quantidade').AsInteger;
+    cdsProdutosDescricao.AsString := cdsTemp.FieldByName('Descricao').AsString;
+    cdsProdutosValorUnitario.AsFloat := cdsTemp.FieldByName('ValorUnitario').AsFloat;
+    cdsProdutosValorTotal.AsFloat := cdsTemp.FieldByName('ValorTotal').AsFloat;
+    cdsProdutos.Post;
+    cdsTemp.Next;
+  end;
+
+end;
+
+procedure TfrmPedidoVenda.btnBuscaPedidoClick(Sender: TObject);
 begin
 
   if frmSearch = nil then
@@ -149,29 +180,7 @@ begin
 
   if (edtNumPedido.Text <> '') then
   begin
-    cdsProdutos.EmptyDataSet;
-
-    objPedido := TPedido.Create(StrToInt(edtNumPedido.Text));
-    edtCodCliente.Text := IntToStr(objPedido.ClienteId);
-    edtNomeCliente.Text := objPedido.Nome;
-
-    objDetPedido := TDetalhePedido.Create;
-
-    cdsTemp := TClientDataSet.Create(nil);
-    cdsTemp.Data := objDetPedido.getDetalhesPedidos(objPedido.NumPedido);
-    cdsTemp.Open;
-
-    while not cdsTemp.EOF do
-    begin
-      cdsProdutos.Append;
-      cdsProdutosProdutoId.AsInteger := cdsTemp.FieldByName('ProdutoId').AsInteger;
-      cdsProdutosQuantidade.AsInteger := cdsTemp.FieldByName('Quantidade').AsInteger;
-      cdsProdutosDescricao.AsString := cdsTemp.FieldByName('Descricao').AsString;
-      cdsProdutosValorUnitario.AsFloat := cdsTemp.FieldByName('ValorUnitario').AsFloat;
-      cdsProdutosValorTotal.AsFloat := cdsTemp.FieldByName('ValorTotal').AsFloat;
-      cdsProdutos.Post;
-      cdsTemp.Next;
-    end;
+    getPedido;
   end;
 end;
 
@@ -181,6 +190,25 @@ begin
     Application.CreateForm(TfrmSearch, frmSearch);
 
   frmSearch.openBusca(Self, edtCodProduto.Name, cBuscaProduto);
+end;
+
+procedure TfrmPedidoVenda.btnCancelarClick(Sender: TObject);
+begin
+
+  if MessageDlg('Deseja cancelar as alterações?', mtConfirmation, [MbYes, mbNo], 0) = mrYes then
+    Exit;
+
+  if (Trim(edtNumPedido.Text) = '') or (StrToInt(edtNumPedido.Text) < 0) then
+  begin
+    cdsProdutos.Cancel;
+    ClearData;
+  end
+  else
+  begin
+    cdsProdutos.Cancel;
+    getPedido;
+  end;
+
 end;
 
 procedure TfrmPedidoVenda.btnExcluirClick(Sender: TObject);
@@ -197,11 +225,16 @@ begin
   if MessageDlg('Deseja realmente excluir o Pedido selecionado?', mtConfirmation, [MbYes, mbNo], 0) = mrNo then
     Exit;
 
+
   objPedido := TPedido.Create(StrToInt(edtNumPedido.Text));
+  try
+    objPedidoControl.Excluir(objPedido);
+  finally
+    objPedido.Free;
+  end;
 
-  objPedidoControl.Excluir(objPedido);
   ClearData;
-
+  ShowMessage('Pedido Excluído!');
 end;
 
 procedure TfrmPedidoVenda.btnGravarPedidoClick(Sender: TObject);
@@ -247,6 +280,7 @@ begin
 
   objPedidoControl := TPedidoController.Create;
 
+
   if (edtNumPedido.Text = '') then
     objPedidoControl.Inserir(objPedido, objItems)
   else
@@ -256,6 +290,7 @@ begin
   end;
 
   edtNumPedido.Text := IntToStr(objPedido.NumPedido);
+
   ShowMessage('Pedido salvo com sucesso!');
 end;
 
